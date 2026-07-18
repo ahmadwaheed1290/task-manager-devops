@@ -1,27 +1,12 @@
-# Task Manager DevOps
+## Live Deployment Case Study
 
-A serverless-style Flask REST API containerized with Docker and deployed on AWS EC2 — demonstrating a complete DevOps workflow from local development to production deployment.
+Full case study with architecture, deployment walkthrough, cost breakdown, and lessons learned:
+https://d2uko7csallknv.cloudfront.net/task-manager-showcase.html
 
-## Live Deployment
-Coming soon — deploying on AWS EC2 with an automated CI/CD pipeline.
+## Deployment Highlights
 
-## Tech Stack
-- Python (Flask)
-- Docker
-- AWS EC2 (Ubuntu)
-- GitHub Actions (CI/CD)
-- Nginx (reverse proxy)
-
-## API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | Health check |
-| GET | `/tasks` | List all tasks |
-| POST | `/tasks` | Create a new task |
-| PUT | `/tasks/<id>/complete` | Mark task as complete |
-| DELETE | `/tasks/<id>` | Delete a task |
-
-## Local Development
-
-Install dependencies and run locally:
+- Successfully deployed on AWS EC2 (Ubuntu 24.04, t3.micro)
+- Docker container running with zero downtime during testing
+- Public API endpoint accessible from anywhere
+- Total deployment cost: near-zero (free tier eligible)
+- Verified with GET and POST requests from external clients
