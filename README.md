@@ -87,6 +87,27 @@ Deployed to AWS EC2 following these steps:
            v
     Live Production API
 
+## CI/CD Pipeline
+
+Every push to `main` triggers an automated GitHub Actions workflow that:
+
+1. SSHes into the EC2 instance using encrypted secrets
+2. Pulls the latest code from the repository
+3. Rebuilds the Docker image
+4. Restarts the container with the new version
+
+Total deployment time: 19 seconds from commit to live production.
+
+Workflow file: `.github/workflows/deploy.yml`
+
+### Required GitHub Secrets
+
+| Secret Name | Description |
+|-------------|-------------|
+| `EC2_HOST` | Public IP of the EC2 instance |
+| `EC2_USERNAME` | SSH username (ubuntu) |
+| `EC2_SSH_KEY` | Private SSH key for authentication |
+
 ## Author
 
 Ahmad Waheed — Cloud Engineer
